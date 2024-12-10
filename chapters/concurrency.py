@@ -3,6 +3,7 @@ import threading
 
 def handle_request(client_socket):
     request = client_socket.recv(1024).decode()
+    print(f"Thread {threading.current_thread().name} handling request")
     print("Request received:\n", request)
     response = (
         "HTTP/1.1 200 OK\n"
@@ -15,7 +16,7 @@ def handle_request(client_socket):
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind(('localhost', 8080))
-server_socket.listen(5)
+server_socket.listen(0)
 print("Listening on port 8080...")
 
 while True:

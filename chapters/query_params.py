@@ -9,7 +9,7 @@ def handle_request(client_socket):
     parsed_url = urlparse(path)
     query_params = parse_qs(parsed_url.query)
 
-    response_body = f"<h1>Query Parameters</h1><pre>{query_params}</pre>"
+    response_body = f"<h1>Query Parameters</h1><pre>Mame: {query_params.get('name')}</pre>"
     response = (
         "HTTP/1.1 200 OK\n"
         "Content-Type: text/html\n"

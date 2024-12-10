@@ -1,5 +1,6 @@
 import socket
 
+
 def handle_request(client_socket):
     # Receive data from the client
     request = client_socket.recv(1024).decode()

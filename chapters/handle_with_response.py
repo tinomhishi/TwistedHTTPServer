@@ -5,12 +5,7 @@ def handle_request(client_socket):
     print("Request received:\n", request)
 
     # Prepare an HTTP response
-    response = (
-        "HTTP/1.1 200 OK\n"
-        "Content-Type: text/html\n"
-        "\n"
-        "<html><body><h1>Hello, World!</h1></body></html>"
-    )
+    response = """HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><body><h1>Hello, World!</h1></body></html>"""
     client_socket.sendall(response.encode())
     client_socket.close()
 
